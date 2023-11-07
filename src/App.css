@@ -10,9 +10,36 @@ body {
 }
 
 .ProjectBox {
+  position: relative;
+  padding: 25px;
+  width: 300px;
+  align-items: center;
+  height: 300px;
+  text-align: center;
+}
+
+.ProjectBox::before {
+  content: '';
+  top: 0;
+  left: 0;
   width: 300px;
   height: 300px;
-  padding: 50px;
-  background-color: rgb(50, 50, 50);
+  position: absolute;
+  padding: 25px;
   border-radius: 25px;
+  background-image: url('https://i.imgur.com/IsZcuQe.png');
+  background-size: cover;
+  opacity: 0.25;
+}
+
+.ProjectBox h1,
+.ProjectBox h2,
+.ProjectBox p {
+    position: relative;
+    z-index: 1;
+}
+
+.ProgressBar {
+  width: 300;
+  height: 300;
 }
