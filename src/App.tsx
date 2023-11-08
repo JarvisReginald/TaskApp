@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 
-function Box({ name, job, title, time }) {
+function Box() {
   return (
     <div className='ProjectBox'>
       <h1>ETemple</h1>
@@ -27,7 +27,7 @@ function App() {
 
   return (
     <div>
-      <Box name="ETemple" job="Editing" title="How Minecraft Modding Became a Business" time="50 days left" />
+      <Box />
       <Bar />
     </div>
 
