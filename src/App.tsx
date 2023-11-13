@@ -1,24 +1,17 @@
 import { useState } from 'react'
 import './App.css'
+import ProjectBoxes from './db'
+
+const project1 = new ProjectBoxes();
+
 
 function Box() {
   return (
     <div className='ProjectBox'>
-      <h1>ETemple</h1>
-      <h2>Editing</h2>
-      <p>How Minecraft Modding Became a Business</p>
-      <p>50 days left</p>
-    </div>
-  )
-}
-
-function Bar()
-{
-  return (
-    <div className='ProgressBar'>
-      <label>
-
-      </label>
+      <h1>{project1.name}</h1>
+      <h2>{project1.job}</h2>
+      <p>{project1.title}</p>
+      <p>{project1.daysuntilcompletion}</p>
     </div>
   )
 }
@@ -28,7 +21,6 @@ function App() {
   return (
     <div>
       <Box />
-      <Bar />
     </div>
 
   )

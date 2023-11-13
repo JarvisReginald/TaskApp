@@ -16,6 +16,7 @@ body {
   align-items: center;
   height: 300px;
   text-align: center;
+  line-height: 50%;
 }
 
 .ProjectBox::before {
@@ -32,11 +33,17 @@ body {
   opacity: 0.25;
 }
 
-.ProjectBox h1,
 .ProjectBox h2,
 .ProjectBox p {
     position: relative;
-    z-index: 1;
+    top: 15%;
+    line-height: normal;
+}
+
+.ProjectBox h1 {
+  position: relative;
+  top: 15%;
+  line-height: 0%;
 }
 
 .ProgressBar {
