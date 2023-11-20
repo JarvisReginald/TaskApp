@@ -1,17 +1,49 @@
 import { useState } from 'react'
 import './App.css'
-import ProjectBoxes from './db'
+import { ProjectDB } from './db'
 
-const project1 = new ProjectBoxes();
+
+interface Project {
+  name: string,
+  job: string;
+  title: string;
+  deadline: string;
+}
+
+interface DB {
+  projects: Project[]
+}
+
+const initial: DB = {
+  projects: [],
+}
+
+
+
+const db = new ProjectDB<DB>('./data.json', initial);
+
+
+
 
 
 function Box() {
+  db.update({
+    projects: [
+        {
+            name: "Test",
+            job: "IDK",
+            title: "Hello",
+            deadline: "2023-12-15",
+        },
+    ]
+  })
+  db.commit()
   return (
     <div className='ProjectBox'>
-      <h1>{project1.name}</h1>
-      <h2>{project1.job}</h2>
-      <p>{project1.title}</p>
-      <p>{project1.daysuntilcompletion}</p>
+      <h1></h1>
+      <h2></h2>
+      <p></p>
+      <p></p>
     </div>
   )
 }
