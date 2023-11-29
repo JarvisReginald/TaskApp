@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import { ProjectDB } from './db'
+import { readFileSync } from 'fs'
 
 
 interface Project {
@@ -20,24 +21,23 @@ const initial: DB = {
 
 
 
-const db = new ProjectDB<DB>('./data.json', initial);
+const db = new ProjectDB<Object>('./data.json', initial);
 
+const projects = JSON.parse(readFileSync("./data.json").toString())
 
+function parseData(): Object {
+  for (const [key, value] of Object.entries(test)) {
+    console.log(`${key}: ${value}`)
+  }
+  
+}
 
 
 
 function Box() {
-  db.update({
-    projects: [
-        {
-            name: "Test",
-            job: "IDK",
-            title: "Hello",
-            deadline: "2023-12-15",
-        },
-    ]
-  })
-  db.commit()
+  const projects2 = Object.entries(projects)
+  const test = projects2[0][1][0]
+
   return (
     <div className='ProjectBox'>
       <h1></h1>
